@@ -10,8 +10,8 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 
 app.get("/set-cookies", async (req, res) => {
-    res.cookie('session', 'user.access_token', { httpOnly: false });
-    res.cookie('session_refresh', 'user.refresh_token', { httpOnly: false });
+    res.cookie('session', 'user.access_token', { httpOnly: false, domain: 'localhost' });
+    res.cookie('session_refresh', 'user.refresh_token', { httpOnly: false, domain: 'localhost' });
     res.json({ message: "Cookies set successfully" })
 })
 
